@@ -19,14 +19,14 @@ namespace Swap_Values
 
             Console.WriteLine("Перестановка имен");
             Console.WriteLine("До перестановки:");
-            PrintSwapState("Имя 1", name1, "Имя 2", name2);
+            Print_State("Имя 1", name1, "Имя 2", name2);
 
             string temp = name1;
             name1 = name2;
             name2 = temp;
 
             Console.WriteLine("После перестановки:");
-            PrintSwapState("Имя 1", name1, "Имя 2", name2);
+            Print_State("Имя 1", name1, "Имя 2", name2);
         }
 
         static void Swap_Cups()
@@ -68,7 +68,7 @@ namespace Swap_Values
             Console.WriteLine($"{cupName} - ({content})");
         }
 
-        static void PrintSwapState(string value1, string content1, string value2, string content2)
+        static void Print_State(string value1, string content1, string value2, string content2)
         { 
             Console.WriteLine($"{value1} - {content1}");
             Console.WriteLine($"{value2} - {content2}");
