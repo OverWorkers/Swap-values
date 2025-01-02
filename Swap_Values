@@ -1,7 +1,6 @@
 using System;
 
 namespace Swap_Values
-
 {
     internal class Program
     {
@@ -19,14 +18,16 @@ namespace Swap_Values
 
             Console.WriteLine("Перестановка имен");
             Console.WriteLine("До перестановки:");
-            Print_State("Имя 1", name1, "Имя 2", name2);
+            Console.WriteLine($"Имя 1 - {name1}");
+            Console.WriteLine($"Имя 2 - {name2}");
 
             string temp = name1;
             name1 = name2;
             name2 = temp;
 
             Console.WriteLine("После перестановки:");
-            Print_State("Имя 1", name1, "Имя 2", name2);
+            Console.WriteLine($"Имя 1 - {name1}");
+            Console.WriteLine($"Имя 2 - {name2}");
         }
 
         static void Swap_Cups()
@@ -34,13 +35,14 @@ namespace Swap_Values
             int cup1 = 2;
             int cup2 = 1;
 
-            Console.WriteLine("Перестановка содержимого чашек:");
+            Console.WriteLine("Перестановка содержимого чашек");
             Console.WriteLine("До перестановки:");
             Cup_Content(cup1, "Чашка 1");
             Cup_Content(cup2, "Чашка 2");
 
-            cup1 = 1;
-            cup2 = 2;
+            int tempCup = cup1;
+            cup1 = cup2;
+            cup2 = tempCup;
 
             Console.WriteLine("После перестановки:");
             Cup_Content(cup1, "Чашка 1");
@@ -66,12 +68,6 @@ namespace Swap_Values
                     break;
             }
             Console.WriteLine($"{cupName} - ({content})");
-        }
-
-        static void Print_State(string value1, string content1, string value2, string content2)
-        { 
-            Console.WriteLine($"{value1} - {content1}");
-            Console.WriteLine($"{value2} - {content2}");
         }
     }
 }
