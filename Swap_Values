@@ -1,0 +1,77 @@
+using System;
+
+namespace Swap_Values
+
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Swap_Names();
+            Console.WriteLine();
+            Swap_Cups();
+        }
+
+        static void Swap_Names()
+        {
+            string name1 = "Иван";
+            string name2 = "Петр";
+
+            Console.WriteLine("Перестановка имен");
+            Console.WriteLine("До перестановки:");
+            PrintSwapState("Имя 1", name1, "Имя 2", name2);
+
+            string temp = name1;
+            name1 = name2;
+            name2 = temp;
+
+            Console.WriteLine("После перестановки:");
+            PrintSwapState("Имя 1", name1, "Имя 2", name2);
+        }
+
+        static void Swap_Cups()
+        {
+            int cup1 = 2;
+            int cup2 = 1;
+
+            Console.WriteLine("Перестановка содержимого чашек:");
+            Console.WriteLine("До перестановки:");
+            Cup_Content(cup1, "Чашка 1");
+            Cup_Content(cup2, "Чашка 2");
+
+            cup1 = 1;
+            cup2 = 2;
+
+            Console.WriteLine("После перестановки:");
+            Cup_Content(cup1, "Чашка 1");
+            Cup_Content(cup2, "Чашка 2");
+        }
+
+        static void Cup_Content(int cup, string cupName)
+        {
+            string content;
+            switch (cup)
+            {
+                case 0:
+                    content = "пусто";
+                    break;
+                case 1:
+                    content = "чай";
+                    break;
+                case 2:
+                    content = "кофе";
+                    break;
+                default:
+                    content = "неизвестно";
+                    break;
+            }
+            Console.WriteLine($"{cupName} - ({content})");
+        }
+
+        static void PrintSwapState(string value1, string content1, string value2, string content2)
+        { 
+            Console.WriteLine($"{value1} - {content1}");
+            Console.WriteLine($"{value2} - {content2}");
+        }
+    }
+}
