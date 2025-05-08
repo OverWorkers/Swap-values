@@ -1,73 +1,121 @@
 using System;
 
-namespace Swap_Values
+namespace SwapValues
 {
     internal class Program
     {
+        // Константы для содержимого чашек
+        const int Empty = 0;
+        const int Tea = 1;
+        const int Coffee = 2;
+
         static void Main(string[] args)
         {
-            Swap_Names();
-            Console.WriteLine();
-            Swap_Cups();
-        }
-
-        static void Swap_Names()
-        {
-            string name1 = "Иван";
-            string name2 = "Петр";
+            // Пример 1 — Имена
+            string Name1 = "Иван";
+            string Name2 = "Петр";
 
             Console.WriteLine("Перестановка имен");
             Console.WriteLine("До перестановки:");
-            Console.WriteLine($"Имя 1 - {name1}");
-            Console.WriteLine($"Имя 2 - {name2}");
+            Console.WriteLine($"Имя 1 - {Name1}");
+            Console.WriteLine($"Имя 2 - {Name2}");
 
-            string temp = name1;
-            name1 = name2;
-            name2 = temp;
+            string Temp = Name1;
+            Name1 = Name2;
+            Name2 = Temp;
 
             Console.WriteLine("После перестановки:");
-            Console.WriteLine($"Имя 1 - {name1}");
-            Console.WriteLine($"Имя 2 - {name2}");
-        }
+            Console.WriteLine($"Имя 1 - {Name1}");
+            Console.WriteLine($"Имя 2 - {Name2}");
 
-        static void Swap_Cups()
-        {
-            int cup1 = 2;
-            int cup2 = 1;
+            Console.WriteLine();
+
+            // Пример 2 — Чашки
+            int Cup1 = Coffee;
+            int Cup2 = Tea;
 
             Console.WriteLine("Перестановка содержимого чашек");
             Console.WriteLine("До перестановки:");
-            Cup_Content(cup1, "Чашка 1");
-            Cup_Content(cup2, "Чашка 2");
 
-            int tempCup = cup1;
-            cup1 = cup2;
-            cup2 = tempCup;
-
-            Console.WriteLine("После перестановки:");
-            Cup_Content(cup1, "Чашка 1");
-            Cup_Content(cup2, "Чашка 2");
-        }
-
-        static void Cup_Content(int cup, string cupName)
-        {
-            string content;
-            switch (cup)
+            string Content1;
+            switch (Cup1)
             {
-                case 0:
-                    content = "пусто";
+                case Empty:
+                    Content1 = "пусто";
                     break;
-                case 1:
-                    content = "чай";
+                case Tea:
+                    Content1 = "чай";
                     break;
-                case 2:
-                    content = "кофе";
+                case Coffee:
+                    Content1 = "кофе";
                     break;
                 default:
-                    content = "неизвестно";
+                    Content1 = "неизвестно";
                     break;
             }
-            Console.WriteLine($"{cupName} - ({content})");
+
+            string Content2;
+            switch (Cup2)
+            {
+                case Empty:
+                    Content2 = "пусто";
+                    break;
+                case Tea:
+                    Content2 = "чай";
+                    break;
+                case Coffee:
+                    Content2 = "кофе";
+                    break;
+                default:
+                    Content2 = "неизвестно";
+                    break;
+            }
+
+            Console.WriteLine($"Чашка 1 - ({Content1})");
+            Console.WriteLine($"Чашка 2 - ({Content2})");
+
+            int TempCup = Cup1;
+            Cup1 = Cup2;
+            Cup2 = TempCup;
+
+            Console.WriteLine();
+
+            Console.WriteLine("После перестановки:");
+
+            switch (Cup1)
+            {
+                case Empty:
+                    Content1 = "пусто";
+                    break;
+                case Tea:
+                    Content1 = "чай";
+                    break;
+                case Coffee:
+                    Content1 = "кофе";
+                    break;
+                default:
+                    Content1 = "неизвестно";
+                    break;
+            }
+
+            switch (Cup2)
+            {
+                case Empty:
+                    Content2 = "пусто";
+                    break;
+                case Tea:
+                    Content2 = "чай";
+                    break;
+                case Coffee:
+                    Content2 = "кофе";
+                    break;
+                default:
+                    Content2 = "неизвестно";
+                    break;
+            }
+
+            Console.WriteLine($"Чашка 1 - ({Content1})");
+            Console.WriteLine($"Чашка 2 - ({Content2})");
         }
     }
 }
